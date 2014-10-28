@@ -1,18 +1,21 @@
 <?php
-include 'connect_to_database.php'; //connect the connection page
 
-if(empty($_SESSION)) // if the session not yet started 
-   session_start();
+include 'session_header.php'; //start session
 
-if(!isset($_SESSION['username'])) { //if not yet logged in
-   header("Location: login.php");// send to login page
-   exit;
-} 
 ?>
-<html>
+<!doctype html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+
+<title>Index</title>
+
+<h3 align="right"> Welcome <?php echo $_SESSION['username']; ?>, <a href="logout.php">Logout</a> </h3> 
+    </head>
 <body>
-Welcome <?php echo $_SESSION['username']; ?>,
- <a href="logout.php">logout</a> 
+
 
 </body>
 </html> 
+
+
